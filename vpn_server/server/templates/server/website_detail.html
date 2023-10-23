@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Detail</title>
+</head>
+<body>
+    <h1>{{ website.name }}</h1>
+
+    <p><strong>Website URL:</strong> {{ website.url }}</p>
+    <p><strong>Created Date:</strong> {{ website.created_date }}</p>
+
+
+    <a href="{% url 'server:website_list' %}">Back to Website List</a>
+</body>
+</html>

@@ -1,10 +1,14 @@
-from django.forms import CharField, DateField, ModelChoiceField, ModelForm, ModelMultipleChoiceField, Select, \
-    SelectMultiple, TextInput, URLField, IntegerField
-from sqlalchemy import ForeignKey
+from django.forms import ModelForm
+from .models import UsersWebsite, WebsiteStatistics
 
 
-class VPNStatForm(ModelForm):
-    user = ForeignKey()
-    site_url = URLField()
-    data_sent = IntegerField()
-    data_received = IntegerField()
+class UserWebsiteForm(ModelForm):
+    class Meta:
+        model = UsersWebsite
+        fields = ['name', 'url']
+
+
+class WebsiteStatisticsForm(ModelForm):
+    class Meta:
+        model = WebsiteStatistics
+        fields = ['clicks', 'data_transferred']

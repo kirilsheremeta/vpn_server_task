@@ -1,0 +1,15 @@
+{% extends "server/base.html" %}
+
+{% block main %}
+<title>Website Statistics</title>
+
+<body>
+<h1>Statistics for {{ website.name }}</h1>
+<p>URL: {{ website.url }}</p>
+
+<h2>Clicks: {{ statistics.clicks }}</h2>
+<h2>Data Transferred: {{ statistics.data_transferred }} MB</h2>
+
+<a href="{% url 'website_list' %}">Back to Website List</a>
+</body>
+{% endblock %}

@@ -1,12 +1,21 @@
 {% extends "server/base.html" %}
 
-{% block content%}
-<main class="px-3">
-    <h1>Cover your page.</h1>
-    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the
-        text, and add your own fullscreen background photo to make it your own.</p>
-    <p class="lead">
-        <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
-    </p>
-</main>
+{% block main %}
+<header class="mb-auto">
+    <div>
+        <h3 class="float-md-start mb-0">Server</h3>
+        {% if user.is_authenticated %}
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link fw-bold py-1 px-0" href="{% url 'server:create_website' %}">Create new website</a>
+            <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="{% url 'server:website_list' %}">Website
+                List</a>
+            <a class="nav-link fw-bold py-1 px-0" href="{% url 'server:website_statistics' %}">Statistic</a>
+            <a class="nav-link fw-bold py-1 px-0" href="{% url 'users:logout' %}">Logout</a>
+            {% else %}
+            <p>Please, <a class="nav-link fw-bold py-1 px-0" href="{% url 'users:login' %}">SignIn</a> or
+                <a class="nav-link fw-bold py-1 px-0" href="{% url 'users:register' %}">SignUp</a>.</p>
+            {% endif %}
+        </nav>
+    </div>
+</header>
 {% endblock %}

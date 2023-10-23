@@ -1,8 +1,9 @@
 {% extends "server/base.html" %}
+
 {% load static %}
 <link rel="stylesheet" href="{% static 'users/style.css' %}">
 
-{% block content %}
+{% block main %}
 <h3>Login</h3>
 
 {%if form.errors %}

@@ -1,0 +1,14 @@
+{% extends "server/base.html" %}
+
+{% block main %}
+<title>Your Websites</title>
+
+<body>
+<h1>Your Websites</h1>
+<ul>
+    {% for website in websites %}
+    <li>{{ website.name }} - <a href="{% url 'website_detail' website.id %}">View</a></li>
+    {% endfor %}
+</ul>
+</body>
+{% endblock %}
